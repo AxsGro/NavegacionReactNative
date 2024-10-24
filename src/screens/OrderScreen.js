@@ -1,6 +1,6 @@
 import { Button, View } from "react-native-web";
 
-function NotificationsScreen({ navigation }) {
+function OrderScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Button
@@ -12,15 +12,15 @@ function NotificationsScreen({ navigation }) {
                 onPress={() => navigation.navigate('Login')}
             />
             <Button
-                title="Go to Register"
-                onPress={() => navigation.navigate('Register')}
+                title="Go to Notifications"
+                onPress={() => navigation.navigate('Notifications')}
             />
             <Button
-                title="Go to Order"
-                onPress={() => navigation.navigate('Order')}
+                title="Go to Register"
+                onPress={() => navigation.navigate('Register')}
             />
         </View>
     );
 }
 
-export default NotificationsScreen;
+export default OrderScreen;

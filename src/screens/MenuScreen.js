@@ -1,6 +1,6 @@
 import { Button, View } from "react-native-web";
 
-function NotificationsScreen({ navigation }) {
+function MenuScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Button
@@ -23,4 +23,4 @@ function NotificationsScreen({ navigation }) {
     );
 }
 
-export default NotificationsScreen;
+export default MenuScreen;
