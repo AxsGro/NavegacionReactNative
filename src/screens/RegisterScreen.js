@@ -1,26 +1,52 @@
-import { Button, View } from "react-native-web";
+import React, { useState } from 'react';
+import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-function RegisterScreen({ navigation }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Button
-                title="Go to Home"
-                onPress={() => navigation.navigate('Home')}
-            />
-            <Button
-                title="Go to Login"
-                onPress={() => navigation.navigate('Login')}
-            />
-            <Button
-                title="Go to Notifications"
-                onPress={() => navigation.navigate('Notifications')}
-            />
-            <Button
-                title="Go to Order"
-                onPress={() => navigation.navigate('Order')}
-            />
-        </View>
-    );
-}
+const LoginScreen = ({ navigation }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-export default RegisterScreen;
+  const handleLogin = () => {
+    // Add your login logic here if needed
+    navigation.navigate('Home');
+  };
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        placeholder="Username"
+        value={username}
+        onChangeText={setUsername}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
+      <Button
+        title="Login"
+        onPress={handleLogin}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 20,
+  },
+  input: {
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    marginBottom: 12,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+  },
+});
+
+export default LoginScreen;
